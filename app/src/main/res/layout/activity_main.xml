@@ -14,7 +14,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="START"
-        android:id="@+id/button"
+        android:id="@+id/startButton"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:background="@android:color/black"
@@ -27,15 +27,15 @@
         android:id="@+id/mainImage"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:src="@drawable/Labryinth2"
-        android:scaleType="fitStart"/>
+        android:scaleType="fitStart"
+        android:src="@drawable/labryinth2"/>
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
         android:id="@+id/nameEditText"
-        android:layout_above="@+id/button"
+        android:layout_above="@+id/startButton"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="44dp"
         android:background="@android:color/black"
