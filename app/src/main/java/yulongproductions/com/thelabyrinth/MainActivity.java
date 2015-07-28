@@ -39,4 +39,10 @@ public class MainActivity extends Activity {
         i.putExtra(getString(R.string.name), name);
         startActivity(i);
     }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        mNameField.setText("");
+    }
 }

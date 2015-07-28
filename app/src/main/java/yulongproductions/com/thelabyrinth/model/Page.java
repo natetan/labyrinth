@@ -28,11 +28,11 @@ public class Page {
     }
 
     // Constructor if page doesn't need an image
-    public Page(String text, Choice c1, Choice c2) {
-        this.text = text;
-        this.choice1 = c1;
-        this.choice2 = c2;
-    }
+//    public Page(String text, Choice c1, Choice c2) {
+//        this.text = text;
+//        this.choice1 = c1;
+//        this.choice2 = c2;
+//    }
 
     public int getImageId() {
         return this.imageId;

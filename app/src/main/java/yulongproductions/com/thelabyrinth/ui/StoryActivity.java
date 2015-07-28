@@ -55,8 +55,8 @@ public class StoryActivity extends Activity {
     private void loadPage(int choice) {
         mCurrentPage = mStory.getPage(choice);
         Drawable drawable = getResources().getDrawable(mCurrentPage.getImageId());
-
         mImageView.setImageDrawable(drawable);
+
         String pageText = mCurrentPage.getText();
         pageText = String.format(pageText, mName);
         mTextView.setText(pageText);
@@ -84,7 +84,7 @@ public class StoryActivity extends Activity {
             mChoice2.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    loadPage(mCurrentPage.getChoice1().getNextPage());
+                    loadPage(mCurrentPage.getChoice2().getNextPage());
                 }
             });
         }
