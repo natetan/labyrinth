@@ -34,6 +34,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
+        android:inputType="textPersonName"
         android:id="@+id/nameEditText"
         android:layout_above="@+id/startButton"
         android:layout_centerHorizontal="true"
@@ -42,6 +43,7 @@
         android:textColor="@android:color/holo_red_light"
         android:hint="Type your name here..."
         android:textColorHint="@android:color/holo_red_light"
+        android:maxLength="31"
         android:textSize="24dp"/>
 
     <TextView
