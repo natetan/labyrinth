@@ -2,10 +2,8 @@ package yulongproductions.com.thelabyrinth;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -14,6 +12,8 @@ import yulongproductions.com.thelabyrinth.ui.StoryActivity;
 
 
 public class MainActivity extends Activity {
+    public static final String TAG = MainActivity.class.getSimpleName();
+
     private EditText mNameField;
     private Button mStartButton;
 
@@ -32,6 +32,9 @@ public class MainActivity extends Activity {
                 startStory(name);
             }
         });
+
+        Log.d(TAG, "Main code is running");
+
     }
 
     private void startStory(String name) {
