@@ -67,8 +67,21 @@ public class Story {
         this.pages[8] = new Page (
                 R.drawable.labryinth_trap_door,
                 "Being the punster that you are, you decide to go the RIGHT way, running through the tunnel, flashlight in hand, shining through the darkness. Eventually, you hear the rush of water coming from somewhere under you. You inspect the floor and find a hidden trapdoor, but in front of you at the end of the tunnel is an alcove of some sort.",
-                new Choice("Go through the trapdoor", 11),
-                new Choice("Inspect the alcove", 12)
+                new Choice("Run to the ladder", 11),
+                new Choice("Go through the trapdoor", 14)
+        );
+
+        // Basically death in a different form (not using the regular death screen
+        this.pages[9] = new Page (
+                R.drawable.labryinth_soul_cairn,
+                "Since blue is your favorite color, you decide to drink the contents of it. Immediately, you recoil at the taste and drop to your knees, cluthcing your throat and gasping, desperately trying to breathe. You feel a poisonous sensation travel to your eyes and your vision becomes black... When you wake up again, the world is warped. The land is a desolate purple, with mindless souls wandering about. You look at your hands, only to find that you look like a soul as well, trapped in this wasteland of the dead. It seems the blue vial had sucked out your soul."
+        );
+
+        this.pages[10] = new Page (
+                R.drawable.labryinth_log_bridge,
+                "Since yellow is a color your mother likes, you decide to drink the contents of it. Immediately, the entire room warps as your entire body seamlessly disappears, changing the scene. When your body reappears, you find that you're on a bridge, over the roaring sound of pure, gushing water. Suddenly, you hear a booming, raspy voice come from nowhere: \"%1$s...welcome to my domain. I don't know how you made it here, but you'll be dead soon!\"",
+                new Choice("Run across the bridge", 13),
+                new Choice("Jump into the rapids", 14)
         );
     }
 
