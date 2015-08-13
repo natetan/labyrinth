@@ -83,6 +83,13 @@ public class Story {
                 new Choice("Run across the bridge", 13),
                 new Choice("Jump into the rapids", 14)
         );
+
+        this.pages[11] = new Page (
+                0, // Image of a dark circular room
+                "",
+                new Choice("Jump into the hole", 14), // leads to the rapids as well
+                new Choice("", 12)
+        );
     }
 
     public Page getPage(int pageNumber) {
