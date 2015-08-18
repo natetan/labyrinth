@@ -73,4 +73,8 @@ public class Page {
     public void setIsFinal(boolean isFinal) {
         this.isFinal = isFinal;
     }
+
+    public boolean doesNotExist() {
+        return this.getText() == null;
+    }
 }
