@@ -95,4 +95,10 @@ public class Story {
     public Page getPage(int pageNumber) {
         return this.pages[pageNumber];
     }
+
+    public boolean doesNotExist(int pageNumber) {
+        return this.pages[pageNumber].getText() == null ||
+                this.pages[pageNumber].getChoice1() == null ||
+                this.pages[pageNumber].getChoice2() == null;
+    }
 }

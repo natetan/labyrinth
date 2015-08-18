@@ -5,4 +5,6 @@
     <string name="action_settings">Settings</string>
     <string name="title_activity_story">StoryActivity</string>
     <string name="name">name</string>
+    <string name="error_title">Oops! Sorry!</string>
+    <string name="error_message">That page doesn\'t exist yet</string>
 </resources>

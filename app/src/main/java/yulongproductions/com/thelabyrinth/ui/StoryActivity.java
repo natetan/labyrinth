@@ -1,6 +1,7 @@
 package yulongproductions.com.thelabyrinth.ui;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
@@ -50,40 +51,49 @@ public class StoryActivity extends Activity {
     }
 
     private void loadPage(int choice) {
-        mCurrentPage = mStory.getPage(choice);
-        Drawable drawable = getResources().getDrawable(mCurrentPage.getImageId());
-        mImageView.setImageDrawable(drawable);
-
-        String pageText = mCurrentPage.getText();
-        pageText = String.format(pageText, mName);
-        mTextView.setText(pageText);
-
-        if (mCurrentPage.isFinal()) {
-            mChoice1.setVisibility(View.INVISIBLE);
-            mChoice2.setText("Play again?");
-            mChoice2.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    finish();
-                }
-            });
+        if (mStory.doesNotExist(choice)) {
+            alertUserAboutError();
         } else {
-            mChoice1.setText(mCurrentPage.getChoice1().getText());
-            mChoice2.setText(mCurrentPage.getChoice2().getText());
+            mCurrentPage = mStory.getPage(choice);
+            Drawable drawable = getResources().getDrawable(mCurrentPage.getImageId());
+            mImageView.setImageDrawable(drawable);
 
-            mChoice1.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    loadPage(mCurrentPage.getChoice1().getNextPage());
-                }
-            });
+            String pageText = mCurrentPage.getText();
+            pageText = String.format(pageText, mName);
+            mTextView.setText(pageText);
 
-            mChoice2.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    loadPage(mCurrentPage.getChoice2().getNextPage());
-                }
-            });
+            if (mCurrentPage.isFinal()) {
+                mChoice1.setVisibility(View.INVISIBLE);
+                mChoice2.setText("Play again?");
+                mChoice2.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        finish();
+                    }
+                });
+            } else {
+                mChoice1.setText(mCurrentPage.getChoice1().getText());
+                mChoice2.setText(mCurrentPage.getChoice2().getText());
+
+                mChoice1.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        loadPage(mCurrentPage.getChoice1().getNextPage());
+                    }
+                });
+
+                mChoice2.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        loadPage(mCurrentPage.getChoice2().getNextPage());
+                    }
+                });
+            }
         }
+    }
+
+    private void alertUserAboutError() {
+        AlertDialogFragment dialog = new AlertDialogFragment();
+        dialog.show(getFragmentManager(), "error_message");
     }
 }
