@@ -50,6 +50,8 @@ public class StoryActivity extends Activity {
     }
 
     private void loadPage(int choice) {
+        // The code and syntax is correct, but the moment a nonexistent "choice" pops up,
+        // the default android error message pops up.
         if (mStory.doesNotExist(choice)) {
             alertUserAboutError();
         } else {
@@ -68,6 +70,15 @@ public class StoryActivity extends Activity {
                     @Override
                     public void onClick(View v) {
                         finish();
+                    }
+                });
+            } else if (mCurrentPage.isOneChoice()) {
+                mChoice1.setVisibility(View.INVISIBLE);
+                mChoice2.setText("Continue");
+                mChoice2.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        loadPage(mCurrentPage.getChoice2().getNextPage());
                     }
                 });
             } else {
