@@ -9,9 +9,11 @@ public class Page {
     private Choice choice1;
     private Choice choice2;
     private boolean isFinal = false;
+    private boolean isOneChoice = false;
 
     // Final Page / Death constructor
     public Page (int imageId, String text) {
+        this.isOneChoice = false;
         this.imageId = imageId;
         this.text = text;
         this.choice1 = null;
@@ -21,18 +23,22 @@ public class Page {
 
     // Constructor if page needs an image
     public Page(int imageId, String text, Choice c1, Choice c2) {
+        this.isOneChoice = false;
         this.imageId = imageId;
         this.text = text;
         this.choice1 = c1;
         this.choice2 = c2;
     }
 
-    // Constructor if page doesn't need an image
-//    public Page(String text, Choice c1, Choice c2) {
-//        this.text = text;
-//        this.choice1 = c1;
-//        this.choice2 = c2;
-//    }
+    // EXPERIMENTAL: Constructor used for simply continuing to the next page if text is too long
+    // Use the set invisibility option with the text "continue to next page"
+    public Page(int imageId, String text, Choice choice) {
+        this.isOneChoice = true;
+        this.imageId = imageId;
+        this.text = text;
+        this.choice1 = null;
+        this.choice2 = choice;
+    }
 
     public int getImageId() {
         return this.imageId;
@@ -72,6 +78,14 @@ public class Page {
 
     public void setIsFinal(boolean isFinal) {
         this.isFinal = isFinal;
+    }
+
+    public boolean isOneChoice() {
+        return this.isOneChoice;
+    }
+
+    public void setIsOneChoice(boolean isOneChoice) {
+        this.isOneChoice = isOneChoice;
     }
 
     public boolean doesNotExist() {

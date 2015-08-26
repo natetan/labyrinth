@@ -68,7 +68,7 @@ public class Story {
                 R.drawable.labryinth_trap_door,
                 "Being the punster that you are, you decide to go the RIGHT way, running through the tunnel, flashlight in hand, shining through the darkness. Eventually, you hear the rush of water coming from somewhere under you. You inspect the floor and find a hidden trapdoor, but in front of you at the end of the tunnel is an alcove of some sort.",
                 new Choice("Run to the ladder", 11),
-                new Choice("Go through the trapdoor", 14)
+                new Choice("Go through the trapdoor", 13)
         );
 
         // Basically death in a different form (not using the regular death screen
@@ -80,15 +80,23 @@ public class Story {
         this.pages[10] = new Page (
                 R.drawable.labryinth_log_bridge,
                 "Since yellow is a color your mother likes, you decide to drink the contents of it. Immediately, the entire room warps as your entire body seamlessly disappears, changing the scene. When your body reappears, you find that you're on a bridge, over the roaring sound of pure, gushing water. Suddenly, you hear a booming, raspy voice come from nowhere: \"%1$s...welcome to my domain. I don't know how you made it here, but you'll be dead soon!\"",
-                new Choice("Run across the bridge", 13),
-                new Choice("Jump into the rapids", 14)
+                new Choice("Run across the bridge", 12),
+                new Choice("Jump into the rapids", 13)
         );
 
         this.pages[11] = new Page (
-                0, // Image of a dark circular room
-                "",
-                new Choice("Jump into the hole", 14), // leads to the rapids as well
-                new Choice("", 12)
+                R.drawable.labryinth_dark_room,
+                "You decide that climbing the ladder is a good decision, since up is better. As you begin climbing, you see that it leads to a trapdoor above you, so you just push it up and climb through. The room is dimly lit but you can see that the room is circular with only one path forward. The place doesn't look all that friendly and you get out of there quickly, following the path ahead. Eventually, you find a bottomless hole and understand that you must make a choice.",
+                new Choice("Jump into the dark hole", 13),
+                new Choice("Keep going forward", 14)
+        );
+
+        // The page with only one button to go forward due to text being too long
+        // Linear branch
+        this.pages[12] = new Page (
+                R.drawable.labryinth_nemeton,
+                "Where did that voice come from? It doesn't matter too much, since you have a fear of heights. Even though you're not a gambler, you decide that the road ahead of the bridge is your best bet. You sprint across, not looking down at the gushing rapids and make it safely to the other side, which by appearence seemed like a large forested area. You see a clearing up ahead and choose to see what's there. In the center of the clearing was a large tree stump.",
+                new Choice("Investigate the tree", 15)
         );
     }
 
@@ -99,10 +107,4 @@ public class Story {
     public boolean doesNotExist(int pageNumber) {
         return this.pages[pageNumber].doesNotExist();
     }
-
-//    public boolean doesNotExist(int pageNumber) {
-//        return this.pages[pageNumber].getText() == null ||
-//                this.pages[pageNumber].getChoice1() == null ||
-//                this.pages[pageNumber].getChoice2() == null;
-//    }
 }
