@@ -28,7 +28,6 @@ public class StoryActivity extends Activity {
 
     // Class constants
     public static final String TAG = StoryActivity.class.getSimpleName();
-    final MediaPlayer player = MediaPlayer.create(this, R.raw.facebook_pop);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,6 +51,7 @@ public class StoryActivity extends Activity {
     }
 
     private void loadPage(int choice) {
+        final MediaPlayer player = MediaPlayer.create(this, R.raw.facebook_pop);
         // The code and syntax is correct, but the moment a nonexistent "choice" pops up,
         // the default android error message pops up.
         if (mStory.doesNotExist(choice)) {

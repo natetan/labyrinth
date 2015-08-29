@@ -108,7 +108,7 @@ public class Story {
         );
 
         this.pages[14] = new Page (
-                R.drawable.labryinth_long_hallway,
+                R.drawable.labryinth_dark_passageway,
                 "No one in their right minds would ever jump down that hole so you decide to move forward into the passageway. It's just like the first tunnel you were in, with everything darkened, so you don't know how far it is. You use your flashlight (luckily you didn't ignore it right?) to help guide you forward. You stop suddenly, hearing a faint and eerie voice in the background. Listening carefully, you hear a message being repeated over and over again in silent whispers: \"Kill them...kill them all!\"",
                 new Choice("Continue walking", 18)
         );
