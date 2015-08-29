@@ -3,6 +3,7 @@ package yulongproductions.com.thelabyrinth.ui;
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -27,6 +28,7 @@ public class StoryActivity extends Activity {
 
     // Class constants
     public static final String TAG = StoryActivity.class.getSimpleName();
+    final MediaPlayer player = MediaPlayer.create(this, R.raw.facebook_pop);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -79,6 +81,7 @@ public class StoryActivity extends Activity {
                     @Override
                     public void onClick(View v) {
                         loadPage(mCurrentPage.getChoice2().getNextPage());
+                        player.start();
                     }
                 });
             } else {
@@ -89,6 +92,7 @@ public class StoryActivity extends Activity {
                     @Override
                     public void onClick(View v) {
                         loadPage(mCurrentPage.getChoice1().getNextPage());
+                        player.start();
                     }
                 });
 
@@ -96,6 +100,7 @@ public class StoryActivity extends Activity {
                     @Override
                     public void onClick(View v) {
                         loadPage(mCurrentPage.getChoice2().getNextPage());
+                        player.start();
                     }
                 });
             }
