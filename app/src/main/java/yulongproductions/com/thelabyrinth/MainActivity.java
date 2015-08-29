@@ -2,6 +2,7 @@ package yulongproductions.com.thelabyrinth;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -19,6 +20,9 @@ public class MainActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        final MediaPlayer player = MediaPlayer.create(this, R.raw.gameboy_start_up);
+        final MediaPlayer skyrimMusic = MediaPlayer.create(this, R.raw.skyrim_main_theme);
+        skyrimMusic.start();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
@@ -29,6 +33,8 @@ public class MainActivity extends Activity {
             @Override
             public void onClick(View v) {
                 String name = mNameField.getText().toString();
+                skyrimMusic.stop();
+                player.start();
                 startStory(name);
             }
         });

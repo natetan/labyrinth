@@ -51,7 +51,9 @@ public class StoryActivity extends Activity {
     }
 
     private void loadPage(int choice) {
-        final MediaPlayer player = MediaPlayer.create(this, R.raw.facebook_pop);
+        final MediaPlayer alivePlayer = MediaPlayer.create(this, R.raw.facebook_pop);
+        final MediaPlayer deadPlayer = MediaPlayer.create(this, R.raw.scary_ringtone);
+        final MediaPlayer skyrimMusic = MediaPlayer.create(this, R.raw.skyrim_main_theme);
         // The code and syntax is correct, but the moment a nonexistent "choice" pops up,
         // the default android error message pops up.
         if (mStory.doesNotExist(choice)) {
@@ -65,15 +67,19 @@ public class StoryActivity extends Activity {
             pageText = String.format(pageText, mName);
             mTextView.setText(pageText);
 
+            // Death Page
             if (mCurrentPage.isFinal()) {
+                deadPlayer.start();
                 mChoice1.setVisibility(View.INVISIBLE);
                 mChoice2.setText("Play again?");
                 mChoice2.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
+                        skyrimMusic.start();
                         finish();
                     }
                 });
+                // Single choice page
             } else if (mCurrentPage.isOneChoice()) {
                 mChoice1.setVisibility(View.INVISIBLE);
                 mChoice2.setText("Continue");
@@ -81,7 +87,7 @@ public class StoryActivity extends Activity {
                     @Override
                     public void onClick(View v) {
                         loadPage(mCurrentPage.getChoice2().getNextPage());
-                        player.start();
+                        alivePlayer.start();
                     }
                 });
             } else {
@@ -92,7 +98,7 @@ public class StoryActivity extends Activity {
                     @Override
                     public void onClick(View v) {
                         loadPage(mCurrentPage.getChoice1().getNextPage());
-                        player.start();
+                        alivePlayer.start();
                     }
                 });
 
@@ -100,7 +106,7 @@ public class StoryActivity extends Activity {
                     @Override
                     public void onClick(View v) {
                         loadPage(mCurrentPage.getChoice2().getNextPage());
-                        player.start();
+                        alivePlayer.start();
                     }
                 });
             }
