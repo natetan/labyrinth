@@ -51,11 +51,10 @@ public class StoryActivity extends Activity {
     }
 
     private void loadPage(int choice) {
-        final MediaPlayer alivePlayer = MediaPlayer.create(this, R.raw.facebook_pop);
-        // final MediaPlayer deadPlayer = MediaPlayer.create(this, R.raw.scary_ringtone);
+        final MediaPlayer advanceNoise = MediaPlayer.create(this, R.raw.facebook_pop);
         final MediaPlayer skyrimMusic = MediaPlayer.create(this, R.raw.skyrim_main_theme);
 
-        final MediaPlayer sounds = MediaPlayer.create(this, mStory.getPage(choice).getSoundId());
+        final MediaPlayer appMusic = MediaPlayer.create(this, mStory.getPage(choice).getSoundId());
 
         // The code and syntax is correct, but the moment a nonexistent "choice" pops up,
         // the default android error message pops up.
@@ -69,7 +68,7 @@ public class StoryActivity extends Activity {
             String pageText = mCurrentPage.getText();
             pageText = String.format(pageText, mName);
             mTextView.setText(pageText);
-            sounds.start();
+            appMusic.start();
 
 
             // Death Page
@@ -91,8 +90,7 @@ public class StoryActivity extends Activity {
                     @Override
                     public void onClick(View v) {
                         loadPage(mCurrentPage.getChoice2().getNextPage());
-                        alivePlayer.start();
-                        sounds.stop();
+                        advanceNoise.start();
                     }
                 });
             } else {
@@ -103,8 +101,7 @@ public class StoryActivity extends Activity {
                     @Override
                     public void onClick(View v) {
                         loadPage(mCurrentPage.getChoice1().getNextPage());
-                        alivePlayer.start();
-                        sounds.stop();
+                        advanceNoise.start();
                     }
                 });
 
@@ -112,8 +109,7 @@ public class StoryActivity extends Activity {
                     @Override
                     public void onClick(View v) {
                         loadPage(mCurrentPage.getChoice2().getNextPage());
-                        alivePlayer.start();
-                        sounds.stop();
+                        advanceNoise.start();
                     }
                 });
             }
