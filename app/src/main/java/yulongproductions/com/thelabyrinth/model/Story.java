@@ -138,9 +138,24 @@ public class Story {
         this.pages[16] = new Page (
                 R.drawable.labryinth_ghiozzo,
                 R.raw.scary_dead_silence,
-                "Luckily, you were the swim captain of your high school and you expertly weave your arms through the water like an expert. The thing, whatever it would be, is still tugging onto your pants, but you get closer and closer to shore. The moment your arms tough the craggy coast, you exert all of your remaining strength to climb up, dragging the creature along with you, blindly reaching for it and slamming it to the ground. It looked like a strange fish hybrid of some sort.",
+                "Luckily, you were the swim captain of your high school and you expertly weave your arms through the water like an expert. The thing, whatever it would be, is still tugging onto your pants, but you get closer and closer to shore. The moment your arms tough the craggy coast, you exert all of your remaining strength to climb up, dragging the creature along with you, blindly reaching for it and slamming it to the ground. It was a fish, gasping for air.",
                 new Choice("Throw it back into the river", 20),
                 new Choice("Kill it!", 21)
+        );
+
+        // Death by Ghiozzo
+        this.pages[17] = new Page (
+                R.drawable.labryinth_ghiozzo,
+                R.raw.scary_dead_silence,
+                "In a mad haze for survival, you do the only thing that comes to your mind: crazily flinging your body around, trying to shake off the creature, but it was to no avail. Every single time you kicked and struggled to the surface for a precious breath of air, you're pulled back under again, like an insomniac stuck in a nightmare. The scary fish hybrid attacking you soon bites your skin, making you gasp in pain, filling your lungs with water as you slowly sink to the bottom, knowing that you failed to escape this prison."
+        );
+
+        this.pages[18] = new Page (
+                R.drawable.labryinth_berserker,
+                R.raw.scary_dead_silence,
+                "You run further inside the passageway and the whispers get louder. You also hear a strange animalistic growl somewhere. When the growling noise gets really loud, a large (not so human) humanoid looking thing appears in front of you. It looked like it was wearing armor made completely of bone and had a skull for a helmet on its head. It looked straight at you and growled.",
+                new Choice("Turn back and run", 22),
+                new Choice("Try to go around it", 23)
         );
 
     }

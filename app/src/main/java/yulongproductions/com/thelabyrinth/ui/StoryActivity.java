@@ -104,6 +104,7 @@ public class StoryActivity extends Activity {
                     public void onClick(View v) {
                         loadPage(mCurrentPage.getChoice1().getNextPage());
                         alivePlayer.start();
+                        sounds.stop();
                     }
                 });
 
@@ -112,6 +113,7 @@ public class StoryActivity extends Activity {
                     public void onClick(View v) {
                         loadPage(mCurrentPage.getChoice2().getNextPage());
                         alivePlayer.start();
+                        sounds.stop();
                     }
                 });
             }
