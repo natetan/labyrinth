@@ -52,8 +52,11 @@ public class StoryActivity extends Activity {
 
     private void loadPage(int choice) {
         final MediaPlayer alivePlayer = MediaPlayer.create(this, R.raw.facebook_pop);
-        final MediaPlayer deadPlayer = MediaPlayer.create(this, R.raw.scary_ringtone);
+        // final MediaPlayer deadPlayer = MediaPlayer.create(this, R.raw.scary_ringtone);
         final MediaPlayer skyrimMusic = MediaPlayer.create(this, R.raw.skyrim_main_theme);
+
+        final MediaPlayer sounds = MediaPlayer.create(this, mStory.getPage(choice).getSoundId());
+
         // The code and syntax is correct, but the moment a nonexistent "choice" pops up,
         // the default android error message pops up.
         if (mStory.doesNotExist(choice)) {
@@ -66,10 +69,11 @@ public class StoryActivity extends Activity {
             String pageText = mCurrentPage.getText();
             pageText = String.format(pageText, mName);
             mTextView.setText(pageText);
+            sounds.start();
+
 
             // Death Page
             if (mCurrentPage.isFinal()) {
-                deadPlayer.start();
                 mChoice1.setVisibility(View.INVISIBLE);
                 mChoice2.setText("Play again?");
                 mChoice2.setOnClickListener(new View.OnClickListener() {
@@ -88,6 +92,7 @@ public class StoryActivity extends Activity {
                     public void onClick(View v) {
                         loadPage(mCurrentPage.getChoice2().getNextPage());
                         alivePlayer.start();
+                        sounds.stop();
                     }
                 });
             } else {

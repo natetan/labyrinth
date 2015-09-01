@@ -1,10 +1,12 @@
 package yulongproductions.com.thelabyrinth.model;
 
+
 /**
  * Created by Yulong on 7/25/2015.
  */
 public class Page {
     private int imageId;
+    private int soundId;
     private String text;
     private Choice choice1;
     private Choice choice2;
@@ -12,7 +14,7 @@ public class Page {
     private boolean isOneChoice = false;
 
     // Final Page / Death constructor
-    public Page (int imageId, String text) {
+    public Page (int imageId, int soundId, String text) {
         this.isOneChoice = false;
         this.imageId = imageId;
         this.text = text;
@@ -22,7 +24,7 @@ public class Page {
     }
 
     // Constructor if page needs an image
-    public Page(int imageId, String text, Choice c1, Choice c2) {
+    public Page(int imageId, int soundId, String text, Choice c1, Choice c2) {
         this.isOneChoice = false;
         this.imageId = imageId;
         this.text = text;
@@ -32,7 +34,7 @@ public class Page {
 
     // EXPERIMENTAL: Constructor used for simply continuing to the next page if text is too long
     // Use the set invisibility option with the text "continue to next page"
-    public Page(int imageId, String text, Choice choice) {
+    public Page(int imageId, int soundId, String text, Choice choice) {
         this.isOneChoice = true;
         this.imageId = imageId;
         this.text = text;
@@ -46,6 +48,14 @@ public class Page {
 
     public void setImageId(int imageId) {
         this.imageId = imageId;
+    }
+
+    public int getSoundId() {
+        return this.soundId;
+    }
+
+    public void setSoundId(int soundId) {
+        this.soundId = soundId;
     }
 
     public String getText() {

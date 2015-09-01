@@ -17,6 +17,7 @@ public class MainActivity extends Activity {
 
     private EditText mNameField;
     private Button mStartButton;
+    private boolean keepPlayingMusic = true;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +33,7 @@ public class MainActivity extends Activity {
         mStartButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                keepPlayingMusic = false;
                 String name = mNameField.getText().toString();
                 skyrimMusic.stop();
                 player.start();
