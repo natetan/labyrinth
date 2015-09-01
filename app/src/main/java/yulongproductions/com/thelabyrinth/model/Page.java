@@ -17,6 +17,7 @@ public class Page {
     public Page (int imageId, int soundId, String text) {
         this.isOneChoice = false;
         this.imageId = imageId;
+        this.soundId = soundId;
         this.text = text;
         this.choice1 = null;
         this.choice2 = null;
@@ -27,6 +28,7 @@ public class Page {
     public Page(int imageId, int soundId, String text, Choice c1, Choice c2) {
         this.isOneChoice = false;
         this.imageId = imageId;
+        this.soundId = soundId;
         this.text = text;
         this.choice1 = c1;
         this.choice2 = c2;
@@ -37,6 +39,7 @@ public class Page {
     public Page(int imageId, int soundId, String text, Choice choice) {
         this.isOneChoice = true;
         this.imageId = imageId;
+        this.soundId = soundId;
         this.text = text;
         this.choice1 = null;
         this.choice2 = choice;
