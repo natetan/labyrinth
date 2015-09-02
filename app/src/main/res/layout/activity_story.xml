@@ -32,7 +32,9 @@
         android:paddingTop="15dp"
         android:paddingRight="30dp"
         android:lineSpacingMultiplier="1.2"
-        android:textColor="@android:color/holo_red_light"/>
+        android:textColor="@android:color/holo_red_light"
+        android:maxLines="50"
+        android:scrollbars="vertical"/>
 
     <Button
         android:layout_width="match_parent"

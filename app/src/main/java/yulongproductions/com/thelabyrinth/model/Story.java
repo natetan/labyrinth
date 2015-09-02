@@ -153,7 +153,7 @@ public class Story {
         this.pages[18] = new Page (
                 R.drawable.labryinth_berserker,
                 R.raw.scary_dead_silence,
-                "You run further inside the passageway and the whispers get louder. You also hear a strange animalistic growl somewhere. When the growling noise gets really loud, a large (not so human) humanoid looking thing appears in front of you. It looked like it was wearing armor made completely of bone and had a skull for a helmet on its head. It looked straight at you and growled.",
+                "You run further inside the passageway and the whispers get louder. You also hear a strange animalistic growl somewhere. When the growling noise gets really loud, a large (not so human) humanoid looking thing appears in front of you. It looked like it was wearing armor made completely of bone and had a skull for a helmet on its head. It stares and you and then growls ferociously.",
                 new Choice("Turn back and run", 22),
                 new Choice("Try to go around it", 23)
         );

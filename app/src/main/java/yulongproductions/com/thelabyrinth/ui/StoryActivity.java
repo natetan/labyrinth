@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.text.method.ScrollingMovementMethod;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -51,8 +52,6 @@ public class StoryActivity extends Activity {
     }
 
     private void loadPage(int choice) {
-        final MediaPlayer advanceNoise = MediaPlayer.create(this, R.raw.facebook_pop);
-        final MediaPlayer skyrimMusic = MediaPlayer.create(this, R.raw.skyrim_main_theme);
 
         final MediaPlayer appMusic = MediaPlayer.create(this, mStory.getPage(choice).getSoundId());
 
@@ -68,7 +67,9 @@ public class StoryActivity extends Activity {
             String pageText = mCurrentPage.getText();
             pageText = String.format(pageText, mName);
             mTextView.setText(pageText);
+            mTextView.setMovementMethod(new ScrollingMovementMethod());
             appMusic.start();
+            appMusic.setLooping(true);
 
 
             // Death Page
@@ -78,7 +79,7 @@ public class StoryActivity extends Activity {
                 mChoice2.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        skyrimMusic.start();
+                        appMusic.start();
                         finish();
                     }
                 });
@@ -90,7 +91,7 @@ public class StoryActivity extends Activity {
                     @Override
                     public void onClick(View v) {
                         loadPage(mCurrentPage.getChoice2().getNextPage());
-                        advanceNoise.start();
+                        // advanceNoise.start();
                     }
                 });
             } else {
@@ -101,7 +102,7 @@ public class StoryActivity extends Activity {
                     @Override
                     public void onClick(View v) {
                         loadPage(mCurrentPage.getChoice1().getNextPage());
-                        advanceNoise.start();
+                        // advanceNoise.start();
                     }
                 });
 
@@ -109,7 +110,7 @@ public class StoryActivity extends Activity {
                     @Override
                     public void onClick(View v) {
                         loadPage(mCurrentPage.getChoice2().getNextPage());
-                        advanceNoise.start();
+                        // advanceNoise.start();
                     }
                 });
             }

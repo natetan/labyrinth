@@ -22,8 +22,9 @@ public class MainActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         final MediaPlayer player = MediaPlayer.create(this, R.raw.gameboy_start_up);
-        final MediaPlayer skyrimMusic = MediaPlayer.create(this, R.raw.skyrim_main_theme);
-        skyrimMusic.start();
+        final MediaPlayer mainTheme = MediaPlayer.create(this, R.raw.dead_silence);
+        mainTheme.start();
+        mainTheme.setLooping(true);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
@@ -35,7 +36,7 @@ public class MainActivity extends Activity {
             public void onClick(View v) {
                 keepPlayingMusic = false;
                 String name = mNameField.getText().toString();
-                skyrimMusic.stop();
+                mainTheme.stop();
                 player.start();
                 startStory(name);
             }

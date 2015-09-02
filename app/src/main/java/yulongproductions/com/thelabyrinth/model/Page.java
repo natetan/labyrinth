@@ -24,7 +24,7 @@ public class Page {
         this.isFinal = true;
     }
 
-    // Constructor if page needs an image
+    // Regular page with an image, a sound, text, and 2 choices
     public Page(int imageId, int soundId, String text, Choice c1, Choice c2) {
         this.isOneChoice = false;
         this.imageId = imageId;
@@ -34,8 +34,6 @@ public class Page {
         this.choice2 = c2;
     }
 
-    // EXPERIMENTAL: Constructor used for simply continuing to the next page if text is too long
-    // Use the set invisibility option with the text "continue to next page"
     public Page(int imageId, int soundId, String text, Choice choice) {
         this.isOneChoice = true;
         this.imageId = imageId;
