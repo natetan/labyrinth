@@ -26,6 +26,7 @@ public class StoryActivity extends Activity {
     private Button mChoice2;
     private String mName;
     private Page mCurrentPage;
+    private MediaPlayer appMusic;
 
     // Class constants
     public static final String TAG = StoryActivity.class.getSimpleName();
@@ -43,17 +44,19 @@ public class StoryActivity extends Activity {
         }
         Log.d(TAG, mName);
 
+        // Initializing Android View objects
         mImageView = (ImageView) findViewById(R.id.storyImageView);
         mTextView = (TextView) findViewById(R.id.storyTextView);
         mChoice1 = (Button) findViewById(R.id.choiceButton1);
         mChoice2 = (Button) findViewById(R.id.choiceButton2);
 
+        mTextView.setMovementMethod(new ScrollingMovementMethod());
+
         loadPage(0);
     }
 
     private void loadPage(int choice) {
-
-        final MediaPlayer appMusic = MediaPlayer.create(this, mStory.getPage(choice).getSoundId());
+        appMusic = MediaPlayer.create(this, mStory.getPage(choice).getSoundId());
 
         // The code and syntax is correct, but the moment a nonexistent "choice" pops up,
         // the default android error message pops up.
@@ -67,7 +70,6 @@ public class StoryActivity extends Activity {
             String pageText = mCurrentPage.getText();
             pageText = String.format(pageText, mName);
             mTextView.setText(pageText);
-            mTextView.setMovementMethod(new ScrollingMovementMethod());
             appMusic.start();
             appMusic.setLooping(true);
 
@@ -120,5 +122,23 @@ public class StoryActivity extends Activity {
     private void alertUserAboutError() {
         AlertDialogFragment dialog = new AlertDialogFragment();
         dialog.show(getFragmentManager(), "error_message");
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        appMusic.stop();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        appMusic.stop();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        appMusic.start();
     }
 }

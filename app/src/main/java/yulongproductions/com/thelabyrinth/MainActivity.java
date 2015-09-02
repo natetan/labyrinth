@@ -17,14 +17,15 @@ public class MainActivity extends Activity {
 
     private EditText mNameField;
     private Button mStartButton;
-    private boolean keepPlayingMusic = true;
+    private MediaPlayer player;
+    private MediaPlayer mainTheme;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        final MediaPlayer player = MediaPlayer.create(this, R.raw.gameboy_start_up);
-        final MediaPlayer mainTheme = MediaPlayer.create(this, R.raw.dead_silence);
-        mainTheme.start();
-        mainTheme.setLooping(true);
+        this.player = MediaPlayer.create(this, R.raw.gameboy_start_up);
+        this.mainTheme = MediaPlayer.create(this, R.raw.dead_silence);
+        this.mainTheme.start();
+        this.mainTheme.setLooping(true);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
@@ -34,7 +35,6 @@ public class MainActivity extends Activity {
         mStartButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                keepPlayingMusic = false;
                 String name = mNameField.getText().toString();
                 mainTheme.stop();
                 player.start();
@@ -56,5 +56,18 @@ public class MainActivity extends Activity {
     protected void onResume() {
         super.onResume();
         mNameField.setText("");
+        this.mainTheme.start();
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        this.mainTheme.stop();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        this.mainTheme.stop();
     }
 }
