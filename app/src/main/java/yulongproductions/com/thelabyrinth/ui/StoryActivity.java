@@ -87,8 +87,7 @@ public class StoryActivity extends Activity {
                 });
                 // Single choice page
             } else if (mCurrentPage.isOneChoice()) {
-                // mChoice1.setVisibility(View.INVISIBLE);
-                mChoice1.setText("");
+                mChoice1.setVisibility(View.INVISIBLE);
                 mChoice2.setText(mCurrentPage.getChoice2().getText());
                 mChoice2.setOnClickListener(new View.OnClickListener() {
                     @Override
@@ -98,6 +97,7 @@ public class StoryActivity extends Activity {
                     }
                 });
             } else {
+                mChoice1.setVisibility(View.VISIBLE);
                 mChoice1.setText(mCurrentPage.getChoice1().getText());
                 mChoice2.setText(mCurrentPage.getChoice2().getText());
 
