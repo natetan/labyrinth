@@ -158,6 +158,22 @@ public class Story {
                 new Choice("Try to go around it", 23)
         );
 
+        this.pages[19] = new Page (
+                0, // Picture of a dark cave in the woods
+                R.raw.dead_silence,
+                "That was the strangest thing you've seen so far and you start running past the clearing in fear for your life. Making the journey through the woods was tough, since it was dark and the terrain of the forest floor was rough. That annoying incessant buzzing sound soon dissipates as you get further away. Out of breath, you stumble upon a cave with a small opening.",
+                new Choice("Explore the cave", 24),
+                new Choice("Go around it", 25)
+        );
+
+        this.pages[20] = new Page (
+                0, // a visual splash to make users believe it was the fish thrown into the river again
+                R.raw.dead_silence,
+                "Although the fish did attack and try to drown you, you feel a pang of sympathy for it. It was just in its nature to pull off a stunt like that so you decide to let it live. You pick it up with both hands (it was surprisingly heavy) and toss it back into the river, hoping it gets back to safety. You check your surroundings to see that you can follow the river or go up the hill into the woods",
+                new Choice("Follow the river", 26),
+                new Choice("Go uphill", 27)
+        );
+
     }
 
     public Page getPage(int pageNumber) {
