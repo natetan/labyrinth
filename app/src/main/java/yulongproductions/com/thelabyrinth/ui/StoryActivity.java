@@ -87,8 +87,9 @@ public class StoryActivity extends Activity {
                 });
                 // Single choice page
             } else if (mCurrentPage.isOneChoice()) {
-                mChoice1.setVisibility(View.INVISIBLE);
-                mChoice2.setText("Continue");
+                // mChoice1.setVisibility(View.INVISIBLE);
+                mChoice1.setText("");
+                mChoice2.setText(mCurrentPage.getChoice2().getText());
                 mChoice2.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {

@@ -34,13 +34,14 @@ public class Page {
         this.choice2 = c2;
     }
 
+    // Continuation Page
     public Page(int imageId, int soundId, String text, Choice choice) {
-        this.isOneChoice = true;
         this.imageId = imageId;
         this.soundId = soundId;
         this.text = text;
         this.choice1 = null;
         this.choice2 = choice;
+        this.isOneChoice = true;
     }
 
     public int getImageId() {
