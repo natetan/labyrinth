@@ -174,6 +174,13 @@ public class Story {
                 new Choice("Go uphill", 27)
         );
 
+        this.pages[21] = new Page (
+                R.drawable.labryinth_water_zombie,
+                R.raw.scary_dead_silence,
+                "This fishy creature just tried to drown you. No way in hell are you going to let it live. You start stomping on the fish repeatedly, with all your strength, trying to crush it in vengeance. With every stomp, it wailed, until you stomp it one last time, when its body explodes into blood and guts around you. However, it seems that the blood had attracted more creatures and suddenly, weird looking humanoid zombie-looking creatures jump out of the river, looking at you like it's dinner time (which it probably was).",
+                new Choice("START RUNNING", 28)
+        );
+
     }
 
     public Page getPage(int pageNumber) {
