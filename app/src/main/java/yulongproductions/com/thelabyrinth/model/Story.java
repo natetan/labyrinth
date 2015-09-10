@@ -181,6 +181,28 @@ public class Story {
                 new Choice("START RUNNING", 28)
         );
 
+        // Takes the user back to the river pages
+        this.pages[22] = new Page (
+                R.drawable.labryinth_dark_hole,
+                R.raw.dead_silence,
+                "That's the deadliest thing you've seen so far and you don't want to die, so you turn back and run as fast as you can, not looking back once. You can hear footsteps pounding on the floor after you, so you pick up the pace, running like Usain Bolt through the darkness. As you reach the room with the hole, you stop and try to catch your breath...that thing doesn't seem to be near, so you relax, recovering from your marathon. However, that all too familiar growling sound next to you. Suddenly, the hole seemed like a good idea.",
+                new Choice("JUMP THROUGH THE HOLE", 13)
+        );
+
+        this.pages[23] = new Page (
+                R.drawable.labryinth_berserker,
+                R.raw.dead_silence,
+                "Since that creature looks big, it must be slow! You've watched enough football to know how to juke people so you fun really far to the right to try to go around the big thing, but it moved surprisingly fast, and swiped its arm to the right, knocking the wind out of you as you fly into the wall. While you're disoriented, it growls and charges at you really fast.",
+                new Choice("Get up and fight it", 28)
+        );
+
+        this.pages[24] = new Page (
+                R.drawable.labryinth_cave_interior,
+                R.raw.dead_silence,
+                "Since nothing dangerous ever happens in caves, you venture inside, hoping to find something to help you get back home. As expected, it is incredibly dark so you turn on your flashlight (luckily you didn't leave it there, right?) to look around. So far, the cave seems like it goes primarily straight, with a bit of curves. Suddenly, you hear a crumbling noise coming from ahead, as if there was a large opening ahead.",
+                new Choice("Investigate the noise", 29)
+        );
+
     }
 
     public Page getPage(int pageNumber) {
