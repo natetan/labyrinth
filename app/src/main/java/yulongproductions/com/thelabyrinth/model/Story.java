@@ -203,6 +203,36 @@ public class Story {
                 new Choice("Investigate the noise", 29)
         );
 
+        this.pages[25] = new Page (
+                R.drawable.labryinth_skyrim_woods,
+                R.raw.dead_silence,
+                "Most people would venture inside the cave to see what's in there, but you're not most people. You traverse around the cave, trying to see what else is around. So far, nothing but more forested areas. Surprisingly, you see some signs of life, in the form of deer, foxes, and even some rabbits. This forest actually seems like the only thing that's normal...that is until all the animals started running away in a single direction, as if something were after them.",
+                new Choice("Run with the animals", 30)
+        );
+
+        this.pages[26] = new Page (
+                R.drawable.labryinth_night_lake,
+                R.raw.dead_silence,
+                "All rivers lead to nice places, so you follow the river by its banks, listening to the calm running of the water. The sun was starting to set and it was getting darker so you pick up the pace, and start running, eventually coming to see the river leading into a grand lake, with some shiny object floating above the lake's center.",
+                new Choice("Swim to the object", 31),
+                new Choice("Go to the woods", 32)
+        );
+
+        this.pages[27] = new Page (
+                R.drawable.labryinth_scary_woods,
+                R.raw.dead_silence,
+                "You head into the woods, which immediately seemed like a bad idea at first, since it was relatively dark due to the sun going down. You pull out your flashlight to help guide you. At first, walking through seemed rather normal, until you started hearing the rustling of leaves somewhere above you. Looking up, you see nothing, but as you start to move, you hear rustling once again.",
+                new Choice("Tread carefully", 33),
+                new Choice("Screw that, run through!", 34)
+        );
+
+        this.pages[28] = new Page (
+                R.drawable.labryinth_stick,
+                R.raw.dead_silence,
+                "With some newly found conviction, you roll sideways, dodging the monster as it careens into the wall, getting its head stuck. You look around the room for a weapon of some sort. To your luck, you see a small stick (more like a twig) in the corner. You run and grab it, while the beast is stuck in the wall. You start trying to stab it in the back, but it doesn't really work that well, since it's completely armored in bone. You keep stabbing it until it punctures a tiny bit. However, the beast seems like it's about to free itself.",
+                new Choice("One final stab", 35)
+        );
+
     }
 
     public Page getPage(int pageNumber) {
