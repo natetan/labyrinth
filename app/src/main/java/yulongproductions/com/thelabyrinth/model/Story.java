@@ -233,6 +233,14 @@ public class Story {
                 new Choice("One final stab", 35)
         );
 
+        this.pages[29] = new Page (
+                R.drawable.labryinth_cavern,
+                R.raw.spooky_ambience,
+                "Continuing forward deeper into the cave, the crumbling gets louder. You see a bit of light ahead (not produced by your flashlight) and run towards it. You find yourself in a large, open cavern mystified with dark mist, blocking your depth of view. The place feels very eerie and seemed like a place that would definitely be considered haunted. Suddenly the forest seemed like a good idea.",
+                new Choice("Explore the cavern", 36),
+                new Choice("Backtrack to the woods", 37)
+        );
+
     }
 
     public Page getPage(int pageNumber) {
