@@ -215,30 +215,30 @@ public class Story {
                 R.raw.dead_silence,
                 "All rivers lead to nice places, so you follow the river by its banks, listening to the calm running of the water. The sun was starting to set and it was getting darker so you pick up the pace, and start running, eventually coming to see the river leading into a grand lake, with some shiny object floating above the lake's center.",
                 new Choice("Swim to the object", 31),
-                new Choice("Go to the woods", 32)
+                new Choice("Go to the woods", 27)
         );
 
         this.pages[27] = new Page (
                 R.drawable.labryinth_scary_woods,
                 R.raw.dead_silence,
                 "You head into the woods, which immediately seemed like a bad idea at first, since it was relatively dark due to the sun going down. You pull out your flashlight to help guide you. At first, walking through seemed rather normal, until you started hearing the rustling of leaves somewhere above you. Looking up, you see nothing, but as you start to move, you hear rustling once again.",
-                new Choice("Tread carefully", 33),
-                new Choice("Screw that, run through!", 34)
+                new Choice("Tread carefully", 32),
+                new Choice("Screw that, run through!", 33)
         );
 
         this.pages[28] = new Page (
                 R.drawable.labryinth_stick,
                 R.raw.dead_silence,
                 "With some newly found conviction, you roll sideways, dodging the monster as it careens into the wall, getting its head stuck. You look around the room for a weapon of some sort. To your luck, you see a small stick (more like a twig) in the corner. You run and grab it, while the beast is stuck in the wall. You start trying to stab it in the back, but it doesn't really work that well, since it's completely armored in bone. You keep stabbing it until it punctures a tiny bit. However, the beast seems like it's about to free itself.",
-                new Choice("One final stab", 35)
+                new Choice("One final stab", 34)
         );
 
         this.pages[29] = new Page (
                 R.drawable.labryinth_cavern,
                 R.raw.spooky_ambience,
                 "Continuing forward deeper into the cave, the crumbling gets louder. You see a bit of light ahead (not produced by your flashlight) and run towards it. You find yourself in a large, open cavern mystified with dark mist, blocking your depth of view. The place feels very eerie and seemed like a place that would definitely be considered haunted. Suddenly the forest seemed like a good idea.",
-                new Choice("Explore the cavern", 36),
-                new Choice("Backtrack to the woods", 37)
+                new Choice("Explore the cavern", 35),
+                new Choice("Backtrack to the woods", 36)
         );
 
     }
