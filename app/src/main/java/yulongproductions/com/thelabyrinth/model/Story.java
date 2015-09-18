@@ -242,7 +242,7 @@ public class Story {
         );
 
         this.pages[30] = new Page (
-                0, // Large cavern with mist? some misty cave from Skyrim?
+                R.drawable.labryinth_velociraptor,
                 R.raw.dead_silence,
                 "Animals can typically sense danger before it even happens (maybe they're psychic?) so you sprint alongside them, at a surprisingly fast pace. Predatory sounds were coming from behind you, and you turn to see a pack of dinosaur looking creatures (Velociraptors maybe?) speeding towards you. One of them leaps out right in front of you, making you fall to the ground.",
                 new Choice("Crawl away in the opposite direction", 37),
@@ -250,14 +250,14 @@ public class Story {
         );
 
         this.pages[31] = new Page (
-                0, // Time gear from Pokemon Mystery Dungeon: Explorers of Darkness/Time/Sky
+                R.drawable.labryinth_time_gear,
                 R.raw.dead_silence,
                 "That shiny object could be the answer you've been looking for, so you dive into the lake, surprised by its warmth. Despite the dark ambiance, the object gave enough light to help you tread through the waters. As you get closer, you can see what seems to be a gear, radiating light energy. You can hear a humming noise coming from it, creating ripples in the water right beneath it. This thing has to be it. It has to be the answer!",
                 new Choice("Grab the gear", 39)
         );
 
         this.pages[32] = new Page (
-                0, // Cave from page 24
+                R.drawable.labryinth_scary_woods,
                 R.raw.dead_silence,
                 "Maybe it won't notice you if you go very slowly, sticking to the shadows. Right now, you don't even know if it's something dangerous. It would just be the wind. As you slowly stalk forward, you listen carefully for rustling above, but you don't hear any. Going at a snail's pace, the journey was incredibly boring, as you move from tree to tree. In the darkness, you could make out a cave just up ahead. It would be a good idea to wait in there until the sun came out again.",
                 new Choice("Go into the cave", 24)
@@ -265,7 +265,7 @@ public class Story {
 
         // DEATH PAGE
         this.pages[33] = new Page (
-                0, // Picture of a black troll from Skyrim or the regular death page
+                R.drawable.labryinth_skyrim_troll_black,
                 R.raw.death_sound,
                 "In fear, you start sprinting through the woods, not caring about the loud crunching of dried leaves beneath your feet. The rustling above seems louder as the thing knows you're on the move. In your haste, your left foot gets caught on something, making you fly forward, falling to the ground. Your flashlight disappears somewhere, and darkness surrounds the area. You try to get up, but a large foot stomps on your back, holding you down. A large hand grabs you by the neck, choking the life out of you. You turn to look at it, revealing a large, black yeti looking creature. It growls, and then slashes you into bits."
         );
