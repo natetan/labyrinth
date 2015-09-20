@@ -238,22 +238,22 @@ public class Story {
                 R.raw.spooky_ambience,
                 "Continuing forward deeper into the cave, the crumbling gets louder. You see a bit of light ahead (not produced by your flashlight) and run towards it. You find yourself in a large, open cavern mystified with dark mist, blocking your depth of view. The place feels very eerie and seemed like a place that would definitely be considered haunted. Suddenly the forest seemed like a good idea.",
                 new Choice("Explore the cavern", 35),
-                new Choice("Backtrack to the woods", 36)
+                new Choice("Backtrack to the woods", 27)
         );
 
         this.pages[30] = new Page (
                 R.drawable.labryinth_velociraptor,
                 R.raw.dead_silence,
                 "Animals can typically sense danger before it even happens (maybe they're psychic?) so you sprint alongside them, at a surprisingly fast pace. Predatory sounds were coming from behind you, and you turn to see a pack of dinosaur looking creatures (Velociraptors maybe?) speeding towards you. One of them leaps out right in front of you, making you fall to the ground.",
-                new Choice("Crawl away in the opposite direction", 37),
-                new Choice("Start kicking it", 38)
+                new Choice("Crawl away in the opposite direction", 36),
+                new Choice("Start kicking it", 37)
         );
 
         this.pages[31] = new Page (
                 R.drawable.labryinth_time_gear,
                 R.raw.dead_silence,
                 "That shiny object could be the answer you've been looking for, so you dive into the lake, surprised by its warmth. Despite the dark ambiance, the object gave enough light to help you tread through the waters. As you get closer, you can see what seems to be a gear, radiating light energy. You can hear a humming noise coming from it, creating ripples in the water right beneath it. This thing has to be it. It has to be the answer!",
-                new Choice("Grab the gear", 39)
+                new Choice("Grab the gear", 38)
         );
 
         this.pages[32] = new Page (
