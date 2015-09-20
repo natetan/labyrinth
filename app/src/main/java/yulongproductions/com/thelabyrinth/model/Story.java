@@ -286,4 +286,13 @@ public class Story {
     public boolean doesNotExist(int pageNumber) {
         return this.pages[pageNumber].doesNotExist();
     }
+
+    public int getWordCount(String pageText) {
+        String[] words = pageText.trim().split("\\s+");
+        return words.length;
+    }
+
+    public int getCharCount(String pageText) {
+        return pageText.trim().length();
+    }
 }
