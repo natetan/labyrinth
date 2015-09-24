@@ -167,7 +167,7 @@ public class Story {
         );
 
         this.pages[20] = new Page (
-                R.drawable.labryinth_cave,
+                R.drawable.labryinth_dark_river,
                 R.raw.dead_silence,
                 "Although the fish did attack and try to drown you, you feel a pang of sympathy for it. It was just in its nature to pull off a stunt like that so you decide to let it live. You pick it up with both hands (it was surprisingly heavy) and toss it back into the river, hoping it gets back to safety. You check your surroundings to see that you can follow the river or go up the hill into the woods",
                 new Choice("Follow the river", 26),
