@@ -146,7 +146,7 @@ public class Story {
         // Death by Ghiozzo
         this.pages[17] = new Page (
                 R.drawable.labryinth_ghiozzo,
-                R.raw.scary_dead_silence,
+                R.raw.death_sound,
                 "In a mad haze for survival, you do the only thing that comes to your mind: crazily flinging your body around, trying to shake off the creature, but it was to no avail. Every single time you kicked and struggled to the surface for a precious breath of air, you're pulled back under again, like an insomniac stuck in a nightmare. The scary fish hybrid attacking you soon bites your skin, making you gasp in pain, filling your lungs with water as you slowly sink to the bottom, knowing that you failed to escape this prison."
         );
 
@@ -242,7 +242,7 @@ public class Story {
         );
 
         this.pages[30] = new Page (
-                R.drawable.labryinth_velociraptor,
+                R.drawable.labryinth_velociraptor_pack,
                 R.raw.dead_silence,
                 "Animals can typically sense danger before it even happens (maybe they're psychic?) so you sprint alongside them, at a surprisingly fast pace. Predatory sounds were coming from behind you, and you turn to see a pack of dinosaur looking creatures (Velociraptors maybe?) speeding towards you. One of them leaps out right in front of you, making you fall to the ground.",
                 new Choice("Crawl away in the opposite direction", 36),
@@ -271,10 +271,61 @@ public class Story {
         );
 
         this.pages[34] = new Page (
-                0, // Cave from page 24
+                R.drawable.labryinth_cave_interior,
                 R.raw.dead_silence,
                 "You raise the stick high into the air with both arms and thrust downwards with all your might. Surprisingly, the stick pierces through its body, with a cloud of white dust flying out. As it screams in agony, you start running into the place it was blocking, noticing there was a tiny bit of night light at the end. You make it to the end and see that it leads you outside, with grass and trees in the area.",
                 new Choice("Go to the woods", 27)
+        );
+
+        this.pages[35] = new Page (
+                R.drawable.labryinth_deeper_cave,
+                R.raw.dead_silence,
+                "You go into the large cavern, which was quiet. Not knowing what was in there, you walk slowly, trying not to make any noise. It was futile, however, as a booming voice echoed through the cavern: \"I'm impressed, %1$s. I truly am. You have made it this far, but you're not going to get past me. Enter the passageway in front of you, and I'll kill you myself.\"",
+                new Choice("Fight the boss", 39),
+                new Choice(this.pages[29].getChoice2().getText(), 27)
+        );
+
+        // DEATH PAGE
+        this.pages[36] = new Page (
+                R.drawable.labryinth_death_screen,
+                R.raw.death_sound,
+                "In fear for your life, you turn away and crawl hastily, but somehow the creature must've known you were trying to get away and you felt their pack rush to your side, gnawing at you with their teeth. They begin slashing and scratching you everywhere, and even digging in with their teeth. You scream as they tear your body apart, enjoying their meal."
+        );
+
+        this.pages[37] = new Page (
+                R.drawable.labryinth_velociraptor,
+                R.raw.dead_silence,
+                "You quickly back away on your butt, and then launch a few kicks at its head, making it flinch, angering it. It growls at you, before moving closer. However, you kick again with more force than before, making it stumble backwards, dizzy. In that small moment of time, you make your move and sweep at its legs, making it tumble to the ground, and unable to attack anymore. You see that the animals are still running, but some of the predator packs start looking at you, since one of their members had been taken down.",
+                new Choice("Start running", 40)
+        );
+
+        // END GAME FOR ONE OF THE BRANCHES
+        this.pages[38] = new Page (
+                R.drawable.labryinth_game_over,
+                R.raw.game_over,
+                "You grab the gear, and suddenly, everything changes. You close your eyes as light explodes everywhere, the impact making you fly away. You brace yourself for the impact as you're falling, but you land on something soft...and oddly familiar. You open your eyes and see that you're in your room at home. It looks as if nothing's changed. Was it all just a cray dream? You get up and see a note on your table, with a message written in clear cursive: \"If you're reading this, then it means you have made it out and cleared my hellish maze. I will have to find another victim. Go and live your life, %1$s.\""
+        );
+
+        this.pages[39] = new Page (
+                R.drawable.labryinth_phalos_portal,
+                R.raw.dead_silence,
+                "It's now or never. Might as well fight, since there's no telling when this hell will end. You step into the dark passageway, and suddenly the entire place is lit up with torches all around, creating a path for you. At the end of the passageway was a strange rectangular tablet of some sort, with a glowing red light right at its center. There are words enscribed: \"A limb's touch brings a new world.\"",
+                new Choice("Place your hand in the center", 41)
+        );
+
+        this.pages[40] = new Page (
+                R.drawable.labryinth_abandoned_house,
+                R.raw.dead_silence,
+                "You run as fast as you can, swerving left and right through branches, desperately trying to avoid the growling of those creatures. You eventually stop, trying to catch your breath. You turn around to see that nothing had followed you, so you continue walking forward through the cluster of leaves. Soon, you see a small house in the middle of a clearing. It looked abandoned, like no one's been there in years.",
+                new Choice("Go in the house", 42),
+                new Choice("Continue through the trees", 43)
+        );
+
+        this.pages[41] = new Page (
+                R.drawable.labryinth_faraway_boss,
+                R.raw.scary_dead_silence,
+                "Placing your hand in the center seemed to have activated some sort of portal. The room warps until you're in a spooky fortress, with a lot of fog in the distance. It was daytime, but it didn't feel safe at all. In front of you was a large, wooden bridge, and in the distance was a large giant, clad in black armor, still as a statue. You walk across the bridge, entering the arch at the end. The figure suddenly looks up, drawing its large axe. This must be the boss.",
+                new Choice("Confront the boss", 44)
         );
 
     }
@@ -294,5 +345,23 @@ public class Story {
 
     public int getCharCount(String pageText) {
         return pageText.trim().length();
+    }
+
+    public int getTotalWordCount(int totalPages) {
+        int total = 0;
+        for (int i = 0; i <= totalPages; i++) {
+            int wordCount = this.getWordCount(this.getPage(i).getText());
+            total += wordCount;
+        }
+        return total;
+    }
+
+    public int getTotalCharCount(int totalPages) {
+        int total = 0;
+        for (int i = 0; i <= totalPages; i++) {
+            int charCount = this.getCharCount(this.getPage(i).getText());
+            total += charCount;
+        }
+        return total;
     }
 }
