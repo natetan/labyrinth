@@ -178,7 +178,7 @@ public class Story {
                 R.drawable.labryinth_water_zombie,
                 R.raw.scary_dead_silence,
                 "This fishy creature just tried to drown you. No way in hell are you going to let it live. You start stomping on the fish repeatedly, with all your strength, trying to crush it in vengeance. With every stomp, it wailed, until you stomp it one last time, when its body explodes into blood and guts around you. However, it seems that the blood had attracted more creatures and suddenly, weird looking humanoid zombie-looking creatures jump out of the river, looking at you like it's dinner time (which it probably was).",
-                new Choice("START RUNNING", 28)
+                new Choice("START RUNNING", 27)
         );
 
         // Takes the user back to the river pages
@@ -326,6 +326,22 @@ public class Story {
                 R.raw.scary_dead_silence,
                 "Placing your hand in the center seemed to have activated some sort of portal. The room warps until you're in a spooky fortress, with a lot of fog in the distance. It was daytime, but it didn't feel safe at all. In front of you was a large, wooden bridge, and in the distance was a large giant, clad in black armor, still as a statue. You walk across the bridge, entering the arch at the end. The figure suddenly looks up, drawing its large axe. This must be the boss.",
                 new Choice("Confront the boss", 44)
+        );
+
+        this.pages[42] = new Page (
+                0, // Scary abandoned house in the middle of the woods
+                R.raw.dead_silence,
+                "You enter the dark, scary house, hoping to find something helpful. As expected, the house was dark and completely silent, except for the creaking of the wood. You whip out your flashlight to help you see in the dark. There seemed to be a lot of doors and rooms on the first floor. Most of them were empty except for a few drawers and dusty boxes.",
+                new Choice("Investigate the living room", 45),
+                new Choice("Go upstairs", 46)
+        );
+
+        this.pages[43] = new Page (
+                0, // Spriggan from Skyrim
+                R.raw.dead_silence,
+                "You've seen enough scary movies to know that only danger can be inside, so going past it would be the logical choice. You choose to walk instead, since nothing is chasing you at the moment and it almost seems peaceful. That is, until you run into the Spriggan. It's almost as if it had materialized out of nowhere from a tree and scared you half to death. You try to run, but it blocks your path, as if it wants to fight.",
+                new Choice("Fight", 46),
+                new Choice("RUN THE HELL AWAY", 47)
         );
 
     }

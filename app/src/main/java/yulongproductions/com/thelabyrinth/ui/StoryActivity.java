@@ -71,7 +71,7 @@ public class StoryActivity extends Activity {
             pageText = String.format(pageText, mName);
             mTextView.setText(pageText);
             appMusic.start();
-            appMusic.setLooping(true);
+            // appMusic.setLooping(true);
 
 
             // Death Page
@@ -93,7 +93,7 @@ public class StoryActivity extends Activity {
                     @Override
                     public void onClick(View v) {
                         loadPage(mCurrentPage.getChoice2().getNextPage());
-                        // advanceNoise.start();
+                        // appMusic.stop();
                     }
                 });
             } else {
@@ -105,7 +105,7 @@ public class StoryActivity extends Activity {
                     @Override
                     public void onClick(View v) {
                         loadPage(mCurrentPage.getChoice1().getNextPage());
-                        // advanceNoise.start();
+                        // appMusic.stop();
                     }
                 });
 
@@ -113,7 +113,7 @@ public class StoryActivity extends Activity {
                     @Override
                     public void onClick(View v) {
                         loadPage(mCurrentPage.getChoice2().getNextPage());
-                        // advanceNoise.start();
+                        // appMusic.stop();
                     }
                 });
             }
