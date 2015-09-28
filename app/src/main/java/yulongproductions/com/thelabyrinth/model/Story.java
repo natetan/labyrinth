@@ -329,7 +329,7 @@ public class Story {
         );
 
         this.pages[42] = new Page (
-                0, // Scary abandoned house in the middle of the woods
+                R.drawable.labryinth_abandoned_house_interior1,
                 R.raw.dead_silence,
                 "You enter the dark, scary house, hoping to find something helpful. As expected, the house was dark and completely silent, except for the creaking of the wood. You whip out your flashlight to help you see in the dark. There seemed to be a lot of doors and rooms on the first floor. Most of them were empty except for a few drawers and dusty boxes.",
                 new Choice("Investigate the living room", 45),
@@ -337,7 +337,7 @@ public class Story {
         );
 
         this.pages[43] = new Page (
-                0, // Spriggan from Skyrim
+                R.drawable.labryinth_spriggan,
                 R.raw.dead_silence,
                 "You've seen enough scary movies to know that only danger can be inside, so going past it would be the logical choice. You choose to walk instead, since nothing is chasing you at the moment and it almost seems peaceful. That is, until you run into the Spriggan. It's almost as if it had materialized out of nowhere from a tree and scared you half to death. You try to run, but it blocks your path, as if it wants to fight.",
                 new Choice("Fight", 46),
