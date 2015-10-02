@@ -35,6 +35,7 @@ public class StoryActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_story);
+        Log.i(TAG, "On create .....");
 
         Intent i = getIntent();
         mName = i.getStringExtra(getString(R.string.name));
@@ -128,18 +129,28 @@ public class StoryActivity extends Activity {
     @Override
     protected void onPause() {
         super.onPause();
+        Log.i(TAG, "On pause .....");
         appMusic.stop();
     }
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
+        Log.i(TAG, "On destory .....");
         appMusic.stop();
     }
 
     @Override
     protected void onResume() {
         super.onResume();
+        Log.i(TAG, "On resume .....");
+        appMusic.start();
+    }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        Log.i(TAG, "On restart .....");
         appMusic.start();
     }
 }
