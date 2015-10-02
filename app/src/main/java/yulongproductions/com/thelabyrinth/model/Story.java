@@ -340,8 +340,31 @@ public class Story {
                 R.drawable.labryinth_spriggan,
                 R.raw.dead_silence,
                 "You've seen enough scary movies to know that only danger can be inside, so going past it would be the logical choice. You choose to walk instead, since nothing is chasing you at the moment and it almost seems peaceful. That is, until you run into the Spriggan. It's almost as if it had materialized out of nowhere from a tree and scared you half to death. You try to run, but it blocks your path, as if it wants to fight.",
-                new Choice("Fight", 46),
-                new Choice("RUN THE HELL AWAY", 47)
+                new Choice("Fight", 47),
+                new Choice("RUN THE HELL AWAY", 48)
+        );
+
+        this.pages[44] = new Page (
+                R.drawable.labryinth_boss,
+                R.raw.scary_dead_silence,
+                "\"I'm here\", you say in a shaky voice. You're met with silence as the boss lumbers towards you, shaking the ground beneath its feet. When the boss is about 20 feet in front of you, it finally speaks, breaking the silence. \"You have finally made it. Now no one leaves this place while the other is alive. Now, choose your weapon.\" An entire arsenal appears to your side.",
+                new Choice("Choose a weapon", 49),
+                new Choice("Feign a choice and then run", 50)
+        );
+
+        this.pages[45] = new Page (
+                R.drawable.labryinth_trashed_living_room,
+                R.raw.dead_silence,
+                "There might still be something to see on the first floor, so you check the living room. Nothing really seemed out of the ordinary. The sofa was trashed, and the room looked completely ransacked. A bunch of (for lack of a better word) crap was littered all over the floor and the door seemed like it sas falling off.",
+                new Choice("Check upstairs", 46)
+        );
+
+        this.pages[46] = new Page (
+                R.drawable.labryinth_second_floor_room,
+                R.raw.dead_silence,
+                "There's nothing down on the first floor so you head towards the staircase. It made a creaking noise with every step you took. The second floor seemed almost identical to the first, with its share of small rooms and a messed up living room area. Every room was dusty, old, and just plain creepy.",
+                new Choice("Check the entire place", 51),
+                new Choice("Leave the house", 52)
         );
 
     }

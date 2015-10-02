@@ -2,27 +2,33 @@ package yulongproductions.com.thelabyrinth.ui;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.support.v7.app.ActionBarActivity;
+import android.media.MediaPlayer;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
 import yulongproductions.com.thelabyrinth.R;
-import yulongproductions.com.thelabyrinth.ui.StoryActivity;
 
 
 public class MainActivity extends Activity {
+    public static final String TAG = MainActivity.class.getSimpleName();
+
     private EditText mNameField;
     private Button mStartButton;
+    private MediaPlayer player;
+    private MediaPlayer mainTheme;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        this.player = MediaPlayer.create(this, R.raw.gameboy_start_up);
+        this.mainTheme = MediaPlayer.create(this, R.raw.dead_silence);
+        this.mainTheme.start();
+        this.mainTheme.setLooping(true);
         mNameField = (EditText)findViewById(R.id.nameEditText);
         mStartButton = (Button)findViewById(R.id.startButton);
 
@@ -30,9 +36,14 @@ public class MainActivity extends Activity {
             @Override
             public void onClick(View v) {
                 String name = mNameField.getText().toString();
+                mainTheme.stop();
+                player.start();
                 startStory(name);
             }
         });
+
+        Log.d(TAG, "Main code is running");
+
     }
 
     private void startStory(String name) {
@@ -45,5 +56,18 @@ public class MainActivity extends Activity {
     protected void onResume() {
         super.onResume();
         mNameField.setText("");
+        this.mainTheme.start();
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        this.mainTheme.stop();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        this.mainTheme.stop();
     }
 }
