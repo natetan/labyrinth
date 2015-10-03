@@ -257,7 +257,7 @@ public class Story {
         );
 
         this.pages[32] = new Page (
-                R.drawable.labryinth_scary_woods,
+                R.drawable.labryinth_dark_cave_entrance,
                 R.raw.dead_silence,
                 "Maybe it won't notice you if you go very slowly, sticking to the shadows. Right now, you don't even know if it's something dangerous. It would just be the wind. As you slowly stalk forward, you listen carefully for rustling above, but you don't hear any. Going at a snail's pace, the journey was incredibly boring, as you move from tree to tree. In the darkness, you could make out a cave just up ahead. It would be a good idea to wait in there until the sun came out again.",
                 new Choice("Go into the cave", 24)
