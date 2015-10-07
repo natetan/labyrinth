@@ -8,7 +8,22 @@ public class Story {
     private Page[] pages;
 
     public Story() {
-        this.pages = new Page[100];
+        this.pages = new Page[102];
+
+        this.pages[100] = new Page (
+                R.drawable.labryinth_danger_sign,
+                R.raw.dead_silence,
+                "WARNING: This app contains bone chilling music, a story that doesn't really make sense, dumb choices, a black and red user interface, and an awesome author. This app contains numerous copyright pictures - enought to have me arrested for intellectual theft. Now that that's taken care of...ARE YOU READY TO IMMSERSE YOURSELF IN THE STORY OF THE LABYRINTH?",
+                new Choice("Yes! Of course!", 0),
+                new Choice("No way. This sucks", 101)
+        );
+
+        this.pages[101] = new Page (
+                R.drawable.labryinth_troll_sign,
+                R.raw.dead_silence,
+                "Yeah...no. You're not leaving this app. ",
+                new Choice("BEGIN STORY", 0)
+        );
 
         this.pages[0] = new Page (
                 R.drawable.labyrinth_start_image,

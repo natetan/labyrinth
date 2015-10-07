@@ -53,7 +53,7 @@ public class StoryActivity extends Activity {
 
         mTextView.setMovementMethod(new ScrollingMovementMethod());
 
-        loadPage(0);
+        loadPage(100);
     }
 
     private void loadPage(int choice) {
