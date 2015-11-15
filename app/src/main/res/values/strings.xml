@@ -7,4 +7,19 @@
     <string name="name">name</string>
     <string name="error_title">Oops! Sorry!</string>
     <string name="error_message">That page doesn\'t exist yet</string>
+
+    <string-array name="month_array">
+        <item>January</item>
+        <item>February</item>
+        <item>March</item>
+        <item>April</item>
+        <item>May</item>
+        <item>June</item>
+        <item>July</item>
+        <item>August</item>
+        <item>September</item>
+        <item>October</item>
+        <item>November</item>
+        <item>December</item>
+    </string-array>
 </resources>
