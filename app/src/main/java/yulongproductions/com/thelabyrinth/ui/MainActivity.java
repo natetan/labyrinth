@@ -6,6 +6,8 @@ import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
 
@@ -19,6 +21,8 @@ public class MainActivity extends Activity {
     private Button mStartButton;
     private MediaPlayer player;
     private MediaPlayer mainTheme;
+    private AutoCompleteTextView monthTextView;
+    private String[] months;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +35,13 @@ public class MainActivity extends Activity {
         this.mainTheme.setLooping(true);
         mNameField = (EditText)findViewById(R.id.nameEditText);
         mStartButton = (Button)findViewById(R.id.startButton);
+
+        // Sets the ArrayAdapter to the AutoCompleteTextView
+        monthTextView = (AutoCompleteTextView)findViewById(R.id.months);
+        this.months = getResources().getStringArray(R.array.month_array);
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
+                android.R.layout.simple_list_item_1, this.months);
+        monthTextView.setAdapter(adapter);
 
         mStartButton.setOnClickListener(new View.OnClickListener() {
             @Override
